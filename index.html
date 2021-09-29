@@ -4,16 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/2e08a2323e.js" crossorigin="anonymous"></script>
+
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <title>deLa.Huerta | Delivery de Frutas y Vegetales</title>
 </head>
 <body>
-    <h1>Curso de JavaScrip</h1>
-    <p>Entregas del Proyecto - Camada 16865</p>
+    <header>
+        <!-------------Navbar Section ------------->
+        <nav class="navbar navbarScroll">
+            <a href="index.html" class="navbar__brand">deLa<span>.H</span>uerta</a>   
+            <div class="navbar__menu">
+                <input type="checkbox" id="check-menu">
+                <label for="check-menu" class="check-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Preguntas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>                   
+        </nav>
+        <!------------ Home Banner ------------>
+        <div class="banner">
+            <img class="banner__bg-img" src="#" alt="">      
+            <div class="banner__content">
+                <h1>deLa<span>.H</span>uerta</h1>
+                <p>Frutas y Vegetales de estación directo de la huerta a tu casa</p>
+                <a href="./pages/servicios.html">Leer más</a>
+            </div>
+            <div class="banner__media-icons">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#/">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
-    <h2>Clase 4 - Simulador Interactivo</h2>
-    <p>Desafío: crear un algoritmo utilizando un ciclo</p>
-
-
+    <!---------------- Footer ---------------->
+    <footer class="footer"> 
+        <div class="footer__container">
+            <div class="footer-brand">
+                <p>deLa.Huerta &copy; 2021</p>
+            </div>
+            <div class="footer-links">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+        </div>
+    </footer>
     <script src="./main.js"></script>
 </body>
 </html>

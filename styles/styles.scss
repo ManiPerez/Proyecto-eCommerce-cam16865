@@ -1,0 +1,355 @@
+/*--------- Google Fonts ---------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/*--------- SASS Styles ---------*/
+
+@import "colors";
+
+/*---------Aspectos Generales---------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    background: $tittle-color-light;
+    overflow-x: hidden;
+}
+
+/*-------------- Banner --------------*/
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(
+        rgba(16, 16, 16, 1),
+        rgba(51, 51, 51, 0.5)
+    );
+
+    &__bg-img {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        z-index: 888;
+        color: $tittle-color-light;
+        width: 100%;
+        margin-top: 5rem;
+        padding: 0 5rem;
+
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 0.5rem;
+            line-height: 3rem;
+            text-transform: uppercase;
+            flex-wrap: nowrap;
+        }
+
+        h2 {
+            color: $key-color;
+            font-size: 3.5rem;
+            letter-spacing: 0.5rem;
+            line-height: 3rem;
+            font-weight: 500;
+            font-style: italic;
+            text-transform: uppercase;
+            margin-top: 2.5rem;
+            flex-wrap: nowrap;
+        }
+
+        span {
+            background: $key-color;
+            display: block;
+            width: 37em;
+            height: 5px;
+            border-radius: 3px;
+            margin-top: 0.7rem;
+            margin-right: 1rem;
+            animation: underlining 1.5s;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            background: $key-color;
+            color: $tittle-color-light;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+            &:hover {
+                background: $tittle-color-light;
+                color: $key-color;           
+            }
+        }
+    }
+
+    &__media-icons {
+        z-index: 888;
+        position: absolute;
+        right: 3rem;
+        display: flex;
+        flex-direction: column;
+        transition: 0.5s ease;
+
+        a {
+            color: $key-color;
+            font-size: 1.5rem;
+            transition: 0.3 ease;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+    
+            &:hover {
+                color: $tittle-color-light;
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+/*-------------- navbar --------------*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+
+    &__brand {
+        color: $key-color;
+        font-weight: 700;
+        font-size: 18px;
+        text-decoration: none;
+
+        span {
+            color: $key-color2;
+            font-size: 22px;
+        }
+
+        &:hover {
+            color: $tittle-color-light;
+        }
+    }
+
+    &__menu {
+        position: relative;
+
+        ul {
+
+            li {
+                display: inline-block;
+
+                a {
+                    position: relative;
+                    color: $key-color;
+                    font-size: 18px;
+                    font-weight: 300;
+                    text-decoration: none;
+                    margin-left: 1.5rem;
+                    transition: 0.3s ease;
+                
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: $tittle-color-light;
+                        width: 0;
+                        height: 100%;
+                        bottom: 0;
+                        left: 0;
+                        transition: 0.3s ease;
+                        z-index: -1;
+                        font-weight: 500;
+                    }
+    
+                    &:hover::before {
+                        width: 70%;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ------------ Client Section ------------ */
+.client {
+    min-height: 100vh;
+    padding: 2em;
+    
+    &__tittle {
+        align-content: center;
+        margin-top: 3.3rem;
+        margin-bottom: 1em;
+
+        h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: $tittle-color-dark;
+
+            span {
+                color: $key-color;
+                font-size: 1.9rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .client-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+    
+            .container-slide {
+                .slide {
+                    border-radius: 5px;
+                    background: $card-bg-focus-color;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+                    width: 300px;
+                    min-height: 300px;
+                    padding: 20px;
+                    margin: 1em;
+                    position: relative;
+                    transform-style: preserve-3d;
+    
+                    .comillas {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-size: 35px;
+                        color: $key-color;
+                    }
+    
+                    .user {
+                        display: flex;
+                        align-items: center;
+    
+                        img {
+                            height: 100px;
+                            width: 100px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            margin-right: 10px;
+                        }
+    
+                        .user-info {
+                            h3 {
+                                color: $tittle-color-dark;
+                                font-size: 20px;
+                            }
+    
+                            .stars {
+                                i {
+                                    color: $key-color;
+                                    font-size: 20px;
+                                }
+                            }
+    
+                        }
+                        
+                    }
+    
+                    .user-text {
+                        margin-top: 1em;
+
+                        p {
+                            color: $border-menu-color;
+                            font-size: 20px;
+                            font-style: italic;                           
+                        }
+    
+                    }  
+                }
+            }
+        }
+    }
+}
+
+/* ------------ Footer ------------ */
+.footer {
+    background: $key-color;
+    height: auto;
+    width: 100vw;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+
+        .footer-brand {
+            width: 100%;
+            line-height: 1.2;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1em;
+            
+            p {
+                color: $key-color2;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+
+        .footer-links {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1em;
+
+            a {
+                color: $key-color2;
+                font-size: 1.5rem;
+                text-decoration: none;
+                padding: 0 0.5em;
+
+                &:hover {
+                    color: $tittle-color-light;
+                }
+            }
+        }
+    }
+}

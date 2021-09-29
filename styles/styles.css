@@ -1,0 +1,408 @@
+/*--------- Google Fonts ---------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+/*--------- SASS Styles ---------*/
+/* ------- Colors ------- */
+/* Primary Colors */
+/* Favourite Color Versions */
+/* Black grey white palettes */
+/*---------Aspectos Generales---------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/*-------------- Banner --------------*/
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#101010), to(rgba(51, 51, 51, 0.5)));
+  background-image: linear-gradient(#101010, rgba(51, 51, 51, 0.5));
+}
+
+.banner__bg-img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.banner__content {
+  z-index: 888;
+  color: #FFFFFF;
+  width: 100%;
+  margin-top: 5rem;
+  padding: 0 5rem;
+}
+
+.banner__content h1 {
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.banner__content h2 {
+  color: #9FD702;
+  font-size: 3.5rem;
+  letter-spacing: 0.5rem;
+  line-height: 3rem;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.banner__content span {
+  background: #9FD702;
+  display: block;
+  width: 37em;
+  height: 5px;
+  border-radius: 3px;
+  margin-top: 0.7rem;
+  margin-right: 1rem;
+  -webkit-animation: underlining 1.5s;
+          animation: underlining 1.5s;
+}
+
+.banner__content p {
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.banner__content a {
+  background: #9FD702;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.banner__content a:hover {
+  background: #FFFFFF;
+  color: #9FD702;
+}
+
+.banner__media-icons {
+  z-index: 888;
+  position: absolute;
+  right: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.banner__media-icons a {
+  color: #9FD702;
+  font-size: 1.5rem;
+  -webkit-transition: 0.3 ease;
+  transition: 0.3 ease;
+}
+
+.banner__media-icons a:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.banner__media-icons a:hover {
+  color: #FFFFFF;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+/*-------------- navbar --------------*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  padding: 40px 100px;
+  z-index: 10000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navbar__brand {
+  color: #9FD702;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.navbar__brand span {
+  color: #188607;
+  font-size: 22px;
+}
+
+.navbar__brand:hover {
+  color: #FFFFFF;
+}
+
+.navbar__menu {
+  position: relative;
+}
+
+.navbar__menu ul li {
+  display: inline-block;
+}
+
+.navbar__menu ul li a {
+  position: relative;
+  color: #9FD702;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.navbar__menu ul li a::before {
+  content: '';
+  position: absolute;
+  background: #FFFFFF;
+  width: 0;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: -1;
+  font-weight: 500;
+}
+
+.navbar__menu ul li a:hover::before {
+  width: 70%;
+  font-weight: 500;
+}
+
+/* ------------ Client Section ------------ */
+.client {
+  min-height: 100vh;
+  padding: 2em;
+}
+
+.client__tittle {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-top: 3.3rem;
+  margin-bottom: 1em;
+}
+
+.client__tittle h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #222326;
+}
+
+.client__tittle h3 span {
+  color: #9FD702;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.client__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.client__body .client-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1200px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.client__body .client-container .container-slide .slide {
+  border-radius: 5px;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  min-height: 300px;
+  padding: 20px;
+  margin: 1em;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.client__body .client-container .container-slide .slide .comillas {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 35px;
+  color: #9FD702;
+}
+
+.client__body .client-container .container-slide .slide .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.client__body .client-container .container-slide .slide .user img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
+.client__body .client-container .container-slide .slide .user .user-info h3 {
+  color: #222326;
+  font-size: 20px;
+}
+
+.client__body .client-container .container-slide .slide .user .user-info .stars i {
+  color: #9FD702;
+  font-size: 20px;
+}
+
+.client__body .client-container .container-slide .slide .user-text {
+  margin-top: 1em;
+}
+
+.client__body .client-container .container-slide .slide .user-text p {
+  color: #eaeaeb31;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* ------------ Footer ------------ */
+.footer {
+  background: #9FD702;
+  height: auto;
+  width: 100vw;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+}
+
+.footer__container .footer-brand {
+  width: 100%;
+  line-height: 1.2;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.footer__container .footer-brand p {
+  color: #188607;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.footer__container .footer-links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.footer__container .footer-links a {
+  color: #188607;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0 0.5em;
+}
+
+.footer__container .footer-links a:hover {
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=styles.css.map */
