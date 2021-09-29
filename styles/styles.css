@@ -281,11 +281,16 @@ header {
 
 .products__content .prod-contentBx .prod-text {
   padding: 15px 0 5px;
+  text-align: center;
 }
 
 .products__content .prod-contentBx .prod-text h3 {
   font-weight: 400;
   color: #046205;
+}
+
+.products__content .prod-contentBx .prod-text p {
+  color: #222326;
 }
 
 /* ------------ Footer ------------ */
