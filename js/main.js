@@ -1,48 +1,32 @@
 // Desafio Clase 4: Simulador Interactivo
 
-//Pedir con prompt al usuario que ingrese el producto que desea sumar al carrito e ir armando lista de compra en consola:
+//Pedir con prompt al usuario que ingrese el producto y la cantidad del mismo que desea sumar al carrito e ir armando lista de compra en consola:
 
 let producto = prompt(`De la lista de productos que se muestra a continuación, introduzca el producto que desea sumar a su carrito:
-BROCOLI  
-LECHUGA  
-KALE
-PALTA
-ZANAHORIA
-TOMATE
-MORRON
-CEBOLLA
-MANZANA
-LIMON
-HUEVOS
-PAPA
-FRUTILLA
-BANANA
-MANDARINA
-NARANJA
+brocoli  
+lechuga  
+kale
+palta
+zanahoria
+tomate
+morron
+cebolla
+manzana
+limon
+huevos
+papa
+frutilla
+banana
+mandarina
+naranja
 
-Cuando quiera dar por finalizado su pedido escriba la palabra FINALIZAR.`);
-let listado = "";
-let contar = 0;
+Cuando quiera dar por finalizado su pedido escriba la palabra FINALIZAR`);
+let cantidad = prompt("¿Cuantas unidades desea agregar a su lista?");
 
-
-producto = prompt ('Introduzca un producto');
-
-while (producto == null || producto == "") {
-    producto = prompt('Introduzca un producto');
-}
-
-producto = producto.toUpperCase();
-
-while (producto != "FINALIZAR") {
-    contar++;
-    console.log(contar + '-' + producto);
-    producto = prompt("Introduzca un producto");
-
-    while(producto == null || producto == "") {
-        producto = prompt("Introduzca un producto");
-    }
-
-    producto = producto.toUpperCase();
+while (producto !== "finalizar") {
+    document.write(`- ${producto}: ${cantidad} unidades<br>`);
+    producto = prompt("Agrega otro producto a la lista:");
+    cantidad = prompt("¿Cuantas unidades del producto?");   
 }
 
 
