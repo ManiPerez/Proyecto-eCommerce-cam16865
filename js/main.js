@@ -73,7 +73,7 @@ if (compraSwitch = 1) {
 /*------------------------------------------------------------------------------------------------------------------*/
 
 
-//Funcion swich
+//Funcion switch
 let compraSwitch = () => {
 alert('Por favor a continuacion ingrese el método con el que desea realizar el pago:')
 let transaccionNumber = Number(prompt(`1-Efectivo
@@ -147,75 +147,6 @@ alert(`Bienvenida ${usuarios[2].name} ${usuarios[2].lastName} `)
 compraSwitch()
 }
 
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-
-
-//Listar productos en la cesta y sumar su precio:
-/*DUDA: quería hacer la suma de la lista de productos con sus precio con promp pero el break no deja que el usuario siga agregando productos. De que otra forma podria hacerlo para que sea mas interactivo? */
-
-
-
-let conteo = 0;
-
-do while (producto != "FINALIZAR") {  
-
-        switch (producto) {
-            case 'BROCOLI':
-                conteo += 80;
-                break;
-            case 'LECHUGA':
-                conteo += 72;
-                break;
-            case 'KALE':
-                conteo += 40;
-                break;
-            case 'PALTA':
-                conteo += 90;
-                break;
-            case 'ZANAHORIA':
-                conteo += 22;
-                break;
-            case 'TOMATE':
-                conteo += 125;
-                break;
-            case 'MORRON':
-                conteo += 120;
-                break;
-            case 'CEBOLLA':
-                conteo += 22;
-                break;
-            case 'MANZANA':
-                conteo += 195;
-                break;
-            case 'LIMON':
-                conteo += 45;
-                break;
-            case 'HUEVOS':
-                conteo += 120;
-                break;
-            case 'PAPA':
-                conteo += 55;
-                break;
-            case 'FRUTILLA':
-                conteo += 400;
-                break;
-            case 'BANANA':
-                conteo += 155;
-                break;
-            case 'MANDARINA':
-                conteo += 44;
-                break;
-            case 'NARANJA':
-                conteo += 42;
-                break;
-        }
-    
-        return conteo; 
-}
-
-console.log(pedido()); 
 
 
 /*------------------------------------------------------------------------------------------------------------------*/
