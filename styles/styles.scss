@@ -259,6 +259,81 @@ header {
 
 }
 
+/* ------------ Lista de Compra ------------ */
+.car {
+    margin: 100px;
+    padding: 20px 0;
+    border: 1px solid $key-color2;
+
+    &__tittle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+            color: $key-color2;
+            font-size: 35px;
+            font-weight: 400;
+            padding-bottom: 20px;
+
+            span {
+                color: $key-color;
+                font-size: 37px;
+                font-weight: 500;
+            }
+        }
+
+        i {
+            color: $key-color;
+            font-size: 37px;
+            padding-bottom: 20px;
+        }
+
+        h6 {
+            color: $key-color2;
+            font-size: 20px;
+            font-weight: 300;
+            padding-bottom: 20px;
+        }
+
+        .userName {
+            color: $tittle-color-dark;
+            font-size: 18px;
+            font-weight: 300;
+            padding-bottom: 20px;
+        }
+
+        .shopList {
+            color: $tittle-color-dark;
+            font-size: 18px;
+            font-weight: 300;
+            padding-bottom: 20px;
+        }
+
+        button {
+            position: relative;
+            margin-top: 10px;
+            display: inline-block;
+            background: $key-color;
+            color: $key-color2;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            padding-bottom: 20px;
+
+            &:hover {
+                background: $key-color2;
+                color: $key-color;
+            }
+        }
+    }
+}
+
 /* ------------ Footer ------------ */
 .footer {
     background: $key-color2;

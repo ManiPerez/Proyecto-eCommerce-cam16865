@@ -1,257 +1,236 @@
-// Desafio Clase 4: Simulador Interactivo
+// // Desafio Clase 4: Simulador Interactivo
 
-//Pedir con prompt al usuario que ingrese el producto y la cantidad del mismo que desea sumar al carrito e ir armando lista de compra en consola:
+// Funcion SALUDAR al usuario:
 
-let producto = prompt(`De la lista de productos que se muestra a continuación, introduzca el producto que desea sumar a su carrito:
-brocoli  
-lechuga  
-kale
-palta
-zanahoria
-tomate
-morron
-cebolla
-manzana
-limon
-huevos
-papa
-frutilla
-banana
-mandarina
-naranja
+function saludar (nombre) {
+    nombre = prompt("Hola, por favor escribe tu nombre:");
+    nombre = nombre.toUpperCase();
+    alert(
+    `Bienvenid@ ${nombre} a DeLa.Huerta!
+    La mejor calidad en frutas y verduras.
+    Directo a tu hogar!`);
+}
+saludar();
 
-Cuando quiera dar por finalizado su pedido escriba la palabra FINALIZAR`);
-let cantidad = prompt("¿Cuantas unidades desea agregar a su lista?");
+/* ---------------------------------------------------------------------------------------*/
 
-while (producto !== "finalizar") {
-    document.write(`- ${producto}: ${cantidad} unidades<br>`);
-    producto = prompt("Agrega otro producto a la lista:");
-    cantidad = prompt("¿Cuantas unidades del producto?");   
+// FUNCIÓN resumen del pedido:
+
+function sumaCosto(producto,costo,costoTotal) {
+    alert(
+        `Mi pedido:
+        
+        + ${producto} $${costo} 
+        
+        Total acumulado: $${costoTotal}`);
+        return costoTotal;
 }
 
+// FUNCIÓN sumaCosto del pedido: actualiza el monto total a pagar //
 
-/*------------------------------------------------------------------------------------------------------------------*/
-
-
-// Log in del usuario:
-let usuarios = [{
-    name: prompt("Introduce tu nombre"),
-    lastName: prompt("Introduce tu apellido"),
-    clave: prompt("Introduce tu clave"),
+function armarLista(texto = "Ingresa el producto que quieras agregar a tu lista") {
+    let = listaProductos = Number(prompt(
+        `${texto}:
+        
+        1 - Bolsón de frutas (1kg)                   $1.200
+        2 - Bolsón de verduras (1kg)               $1.000
+        3 - Bolsón de frutas y verduras (2kg)   $2.000
+        
+        0 - Finalizar lista
+        
+        `));
+        return listaProductos;
 }
-]
+let costoProductos = armarLista();
 
-/*------------------------------------------------------------------------------------------------------------------*/
+// Sentencia WHILE + SWITCH para agregar productos a la lista y finalizar el proceso mostrando con un alert el Costo Total del pedido:
 
-
-// Escoger pedido que el usuario desea comprar con switch:
-
-let compraSwitch = () => {
-    alert('Por favor elija el pedido que desea realizar:');
-    let compraNumber = Number(prompt(`1-Bolsón de verduras $1.000
-                                      2-Bolsón de frutas $1.200`));
-    while (compraNumber != isNaN){
-        switch (compraNumber) {
-            case 1:
-                alert('Bolsón de verduras $1.000');
-                verduras();
-                break;
-            case 2:
-                alert('Bolsón de frutas $1.200');
-                frutas();
-                break;
-        }
-    }
-    console.log('HOla')    /* DUDA: me gustaria validar el ingreso de datos con un while... si el numero ingresado es NaN, o menos a ,.... o tiene espacios que me diga numero no valido(ahi puse un console.log(?holaa)), solo para verificar pero no me funciona.. que estoy haciendo mal?*/
-}
-if (compraSwitch = 1) {
-    alert("El monto a abonar es de $1.000.");
-} else if (compraSwitch = 2) {
-    alert("El monto a abonar es de $1.200.");
-}
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-
-//Funcion switch
-let compraSwitch = () => {
-alert('Por favor a continuacion ingrese el método con el que desea realizar el pago:')
-let transaccionNumber = Number(prompt(`1-Efectivo
-                                       2-Tarjeta de Débito
-                                       3-Tarjeta de Crédito
-                                       4-MercadoPago
-                                       5-Transferencia`))
-while (transaccionNumber != isNaN){
-    switch (transaccionNumber) {
-        case 1:
-            alert('Efectivo')
-            deposito()
-            break;
-        case 2:
-            alert('Tarjeta de Débito')
-            transferencia()
-            break;
-        case 3:
-            alert('Tarjeta de Crédito')
-            transferencia()
-            break;
-        case 4:
-            alert('MercadoPago')
-            transferencia()
-            break;
-        case 5:
-            alert('Transferencia')
-            transferencia()
-            break;            
-    }
-}
-}
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-// Funcion Efectivo
-let efectivo = () => {
-    let precioCompra = Number(prompt('Por favor ingrese el monto de su compra: '));
-    let efectivoAentregar = Number(prompt('Por favor ingrese el monto de efectivo con el que va a abonar: '))
-    let vueltoAentregar = efectivoAentregar - precioCompra;
-    alert(`Su vuelto es de $ ${vueltoAentregar}`)
-    let precioCompra = []
-    precioCompra.push(efectivoAentregar)
-    console.log(precioCompra)
-    return efectivo;
-}
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-//Funcion transferencia
-let transferencia = () => {
-let numeroAtransferir = Number(prompt('Por favor ingrese la cantidad que va a transferir: '))
-alert(`Su monto es de $ ${numeroAtransferir}`)
-return transferencia;
-}
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-//Inicio de usuario
-
-alert('Bienvenid@ a deLa.Huerta')
-let ingresoClave = Number(prompt('Por favor ingresa tu clave numerica: '))
-if (ingresoClave === usuarios[0].clave) {
-alert(`Bienvenid@ ${usuarios[0].name} ${usuarios[0].lastName} `)
-compraSwitch()
-} else if (ingresoClave === usuarios[1].clave) {
-alert(`Bienvenida ${usuarios[1].name} ${usuarios[1].lastName} `)
-compraSwitch()
-} else if (ingresoClave === usuarios[2].clave) {
-alert(`Bienvenida ${usuarios[2].name} ${usuarios[2].lastName} `)
-compraSwitch()
-}
-
-
-
-/*------------------------------------------------------------------------------------------------------------------*/
-
-
-// Funcion para llevar el stock:
-// DUDA: no logro ver el error que me tira el navegador en consola. Quiero que el usuario vaya escribiendo los nombres de los productos y cuanta cantidad de c/u desea agregar a su lista de compra y que se vaya sumando el monto a pagar por la cantidad adquirida y al final se muestre el total a pagar con un alert.
-
-
-let totalCompra = 0;
 let producto;
+let costo;
+let costoTotal = 0;
+let conteo = 0;
 
-do {
-    producto = parseInt(prompt(`Escriba el nombre del producto que desea agregar a su pedido:
-    BROCOLI  
-    LECHUGA  
-    KALE
-    PALTA
-    ZANAHORIA
-    TOMATE
-    MORRON
-    CEBOLLA
-    MANZANA
-    LIMON
-    HUEVOS
-    PAPA
-    FRUTILLA
-    BANANA
-    MANDARINA
-    NARANJA
+while(costoProductos != 0) {
 
-    Escriba la palabra FINALIZAR cuando termine de armar su pedido.`));
+    switch(costoProductos) {
+        case 1:
+            producto = "Bolsón de frutas (1kg)";
+            costo = 1200;
+            costoTotal += costo;
+            conteo = sumaCosto(producto,costo,costoTotal);
+            costoProductos = armarLista();
+            break; 
 
-    let cantidad;
+        case 2:
+            producto = "Bolsón de verduras (1kg)";
+            costo = 1000;
+            costoTotal += costo;
+            conteo = sumaCosto(producto,costo,costoTotal);
+            costoProductos = armarLista();
+            break; 
+
+        case 3:
+            producto = "Bolsón de frutas y verduras (2kg)";
+            costo = 2000;
+            costoTotal += costo;
+            conteo = sumaCosto(producto,costo,costoTotal);
+            costoProductos = armarLista();
+            break; 
+
+        default:
+            costoProductos = armarLista("La opción ingresada es incorecta");
+            break;    
+    }
+}
+
+alert(`PEDIDO FINALIZADO. Costo Total: $${conteo}`);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// FUNCIÓN para elegir cantidad de cuotas (PASO 2):
+
+function tarjetaCredito () {
+    function montoEnCuotas(text = "Elige en cuantas cuotas deseas abonar") {
+        let cantDeCuotas = Number(prompt(
+            `${text}:
+            
+            1 - En 1 cuota: $${conteo}. Total: $${conteo}
+            2 - En 2 cuotas de $${(conteo * 1.05)/2} c/u. Total: $${conteo * 1.05}
+            3 - En 3 cuotas de $${(conteo * 1.1)/3} c/u. Total: $${conteo * 1.1}
+            
+            0 - Ninguna. Finalizar transacción
+            
+            `));
+            return cantDeCuotas;
+    }
+    let misCuotas = montoEnCuotas();
     
-    switch (producto) {
-        case 'BROCOLI':
-            cantidad = parseInt(prompt('El BROCOLI está $80 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 80;
+    // Sentencia WHILE y SWITCH para calcular monto de las cuotas elegidas:
+       
+    switch (misCuotas) {
+        case 0:
+            alert(`
+                Lamentamos que no haya concretado su compra.
+                Que tenga un buen día!`);
+                break;
+        case 1:
+            conteo *= 1;
+            alert(`Monto total a pagar en 1 cuota: $${conteo}`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+            alert(`
+            Gracias por su compra!
+            Nos comunicaremos cuando su pedido esté en camino.
+            Que tenga un buen día!`);
             break;
-        case 'LECHUGA':
-            cantidad = parseInt(prompt('La LECHUGA está $20 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 20;
+
+        case 2:
+            conteo *= 1.05;
+            alert(`Monto total a pagar: $${conteo}. En 2 cuotas de $${conteo/2} c/u.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+            alert(`
+            Gracias por su compra!
+            Nos comunicaremos cuando su pedido esté en camino.
+            Que tenga un buen día!`);      
+        break;
+
+        case 3:
+            conteo *= 1.1;
+            alert(`Monto total a pagar: $${conteo}. En 3 cuotas de $${conteo/3} c/u.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`); 
+            alert(`
+            Gracias por su compra!
+            Nos comunicaremos cuando su pedido esté en camino.
+            Que tenga un buen día!`);        
             break;
-        case 'KALE':
-            cantidad = parseInt(prompt('El KALE está $40 el atado. ¿Cuántos desea comprar? Ecribir numero de atados:'))
-            totalCompra = cantidad * 40;
-            break;
-        case 'PALTA':
-            cantidad = parseInt(prompt('La PALTA está $90 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 90;
-            break;
-        case 'ZANAHORIA':
-            cantidad = parseInt(prompt('La ZANAHORIA está $5 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 5;
-            break;
-        case 'TOMATE':
-            cantidad = parseInt(prompt('El TOMATE está $20 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 20;
-            break;
-        case 'MORRON':
-            cantidad = parseInt(prompt('El MORRON está $55 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 55;
-            break;
-        case 'CEBOLLA':
-            cantidad = parseInt(prompt('La CEBOLLA está $4 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 4;
-            break;
-        case 'MANZANA':
-            cantidad = parseInt(prompt('La MANZANA está $25 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 25;
-            break;
-        case 'LIMON':
-            cantidad = parseInt(prompt('El LIMON está $10 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 10;
-            break;
-        case 'HUEVOS':
-            cantidad = parseInt(prompt('Los HUEVOS están $120 la docena. ¿Cuántas desea comprar? Ecribir numero de docenas:'))
-            totalCompra = cantidad * 120;
-            break;
-        case 'PAPA':
-            cantidad = parseInt(prompt('La PAPA está $25 el kilo. ¿Cuántos desea comprar? Ecribir numero de kilos:'))
-            totalCompra = cantidad * 25;
-            break;
-        case 'FRUTILLA':
-            cantidad = parseInt(prompt('La FRUTILLA está $200 la bolsa de 250gr. ¿Cuántas desea comprar? Ecribir numero de bolsas:'))
-            totalCompra = cantidad * 200;
-            break;
-        case 'BANANA':
-            cantidad = parseInt(prompt('La BANANA está $7 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 7;
-            break;
-        case 'MANDARINA':
-            cantidad = parseInt(prompt('La BANANA está $4 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 4;
-            break;
-        case 'NARANJA':
-            cantidad = parseInt(prompt('La NARANJA está $3 la unidad. ¿Cuántas desea comprar? Ecribir numero de unidades:'))
-            totalCompra = cantidad * 3;
+
+        default:
+            misCuotas = montoEnCuotas("La opción ingresada es incorecta");
             break;
     }
+}
 
-} while(producto != "FINALIZAR");
+/* ---------------------------------------------------------------------------------------*/
 
-alert(`Gracias por su compra El total a abonar por su pedido es de $${totalCompra}.`);
+// FUNCION menu para eligir metodo de pago (PASO 1):
+
+function formasDePago (mensaje = "Elige una forma de pago") {
+    let formasLista = Number(prompt(
+        `${mensaje}:
+        
+        1 - Tarjeta de Débito
+        2 - MercadoPago
+        3 - PagoFacil
+        4 - RapiPago
+        5 - Tarjeta de Crédito
+        
+        0 - Ninguna. Finalizar transacción
+        
+        `));
+        return formasLista;
+}
+let pagoEn = formasDePago();
+
+// Sentencia WHILE + SWITCH para calcular monto a pagar segun el medio de pago elegido por el usuario:
+
+let mailUsuario;
+
+switch (pagoEn) {
+    
+    case 0:
+        alert(`
+            Lamentamos que no haya concretado su compra.
+            Que tenga un buen día!`);
+            break;
+    case 1:
+        alert(`El monto total a pagar es: $${conteo}. A continuación le pediremos sus datos:`);
+        prompt("Ingrese numero de tarjeta:");
+        prompt("Ingrese numero de documento:");
+        prompt("Ingrese fecha de vecimiento de tarjeta:");
+        prompt("Ingrese clave de tarjeta:");
+        mailUsuario = prompt("Ingrese su casilla de mail:");
+        alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+        alert(`
+        Gracias por su compra!
+        Nos comunicaremos cuando su pedido esté en camino.
+        Que tenga un buen día!`);
+        break;
+    case 2:
+    case 3:
+    case 4:
+        mailUsuario = prompt("Ingrese su casilla de mail:");
+        alert(`Listo! Le enviamos a ${mailUsuario} el link de pago.`);
+        alert(`
+        Gracias por su compra!
+        Nos comunicaremos cuando su pedido esté en camino.
+        Que tenga un buen día!`);
+        break;
+
+    case 5:
+        alert(`El monto total a pagar es: $${conteo}. A continuación le pediremos sus datos:`);
+        prompt("Ingrese numero de tarjeta:");
+        prompt("Ingrese numero de documento:");
+        prompt("Ingrese fecha de vecimiento de tarjeta:");
+        prompt("Ingrese clave de tarjeta:");
+        mailUsuario = prompt("Ingrese su casilla de mail:");
+        conteo = tarjetaCredito();
+        break;
+
+    default:
+        pagoEn = formasDePago("La opción ingresada es incorecta");
+        break;
+}
+
+// FIN DEL PROGRAMA
+
+
+
+
+
+
+
+
+
+
 
 
 
