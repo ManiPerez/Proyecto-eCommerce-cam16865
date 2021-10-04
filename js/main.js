@@ -14,6 +14,31 @@ saludar();
 
 /* ---------------------------------------------------------------------------------------*/
 
+// Funcion LOG IN del usuario:
+
+function userData (nombre,apellido,mail,telefono,clave) {
+    alert("Registrate ingresando tus datos:");
+    nombre = prompt("Nombre:"); 
+    nombre = nombre.toUpperCase();  
+    apellido = prompt("Nombre:");
+    apellido = apellido.toUpperCase();
+    mail = prompt("Mail:");
+    telefono = Number(prompt("Telefono:"));
+    clave = prompt("Clave:");
+    console.log(
+        `Datos usuario:
+        Nombre: ${nombre}
+        Apellido: ${apellido}
+        Mail: ${mail}
+        Telefono: ${telefono}
+        Clave: ${clave}
+        `)
+
+}
+userData();
+
+/* ---------------------------------------------------------------------------------------*/
+
 // FUNCIÓN resumen del pedido:
 
 function sumaCosto(producto,costo,costoTotal) {
@@ -116,7 +141,7 @@ function tarjetaCredito () {
         case 1:
             conteo *= 1;
             alert(`Monto total a pagar en 1 cuota: $${conteo}`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -126,7 +151,7 @@ function tarjetaCredito () {
         case 2:
             conteo *= 1.05;
             alert(`Monto total a pagar: $${conteo}. En 2 cuotas de $${conteo/2} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -136,7 +161,7 @@ function tarjetaCredito () {
         case 3:
             conteo *= 1.1;
             alert(`Monto total a pagar: $${conteo}. En 3 cuotas de $${conteo/3} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`); 
+            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`); 
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -187,8 +212,7 @@ switch (pagoEn) {
         prompt("Ingrese numero de documento:");
         prompt("Ingrese fecha de vecimiento de tarjeta:");
         prompt("Ingrese clave de tarjeta:");
-        mailUsuario = prompt("Ingrese su casilla de mail:");
-        alert(`Su pago se registró con éxito. Le enviamos a ${mailUsuario} el comprobante de pago.`);
+        alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
@@ -197,8 +221,7 @@ switch (pagoEn) {
     case 2:
     case 3:
     case 4:
-        mailUsuario = prompt("Ingrese su casilla de mail:");
-        alert(`Listo! Le enviamos a ${mailUsuario} el link de pago.`);
+        alert(`Listo! Le enviamos a ${mail} el link de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
@@ -211,7 +234,6 @@ switch (pagoEn) {
         prompt("Ingrese numero de documento:");
         prompt("Ingrese fecha de vecimiento de tarjeta:");
         prompt("Ingrese clave de tarjeta:");
-        mailUsuario = prompt("Ingrese su casilla de mail:");
         conteo = tarjetaCredito();
         break;
 
@@ -221,6 +243,59 @@ switch (pagoEn) {
 }
 
 // FIN DEL PROGRAMA
+
+
+
+/* ----------------------------------------------------------------------------------------*/
+
+
+// DESAFIO CLASE 5: NCORPORAR OBJETOS
+
+// OBJETO 1: usuarios
+
+class usuario {
+    constructor(nombre,apellido,mail,telefono,clave) {
+        this.name = nombre;
+        this.lastname = apellido;
+        this.mail = mail;
+        this.phonenunber = telefono;
+        this.password = clave;
+    }
+    userData() {
+        console.log("Usuario: " + (this.name) + " " + (this.lastname) + ". Su mail es: " + (this.mail) + ". Telefono: " + (this.phonenunber) + ". Clave de registro: " + (this.password));
+    }
+}
+let usuario1 = new usuario("MABEL","MORALES","mabelmorales@mail.com",221405060,"claveMabel1");
+usuario1.userData();
+
+let usuario2 = new usuario("ROBERTO","CASTRO","robertocastro@mail.com",221708090,"claveRoberto2");
+usuario2.userData();
+
+
+// OBJETO 2: bolsones
+
+class bolson {
+    constructor(productos,cantidad,precio) {
+        this.product = productos;
+        this.quantity = cantidad;
+        this.price = precio;
+    }
+    bolsonData() {
+        console.log("Bolson de " + (this.product) + ". Cantidad: " + (this.quantity) + ". Precio: $" + (this.price));
+    }
+}
+let bolson1 = new bolson("Frutas","1kg","1200");
+bolson1.bolsonData();
+
+let bolson2 = new bolson("Vegetales","1kg","1000");
+bolson2.bolsonData();
+
+let bolson3 = new bolson("Frutas y Vegetales","2kg","2000");
+bolson3.bolsonData();
+
+
+
+
 
 
 
