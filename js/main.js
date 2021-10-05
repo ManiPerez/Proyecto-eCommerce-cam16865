@@ -130,7 +130,7 @@ function tarjetaCredito () {
     }
     let misCuotas = montoEnCuotas();
     
-    // Sentencia WHILE y SWITCH para calcular monto de las cuotas elegidas:
+    // Sentencia SWITCH para calcular monto de las cuotas elegidas:
        
     switch (misCuotas) {
         case 0:
@@ -195,9 +195,9 @@ function formasDePago (mensaje = "Elige una forma de pago") {
 }
 let pagoEn = formasDePago();
 
-// Sentencia WHILE + SWITCH para calcular monto a pagar segun el medio de pago elegido por el usuario:
+// Sentencia SWITCH para calcular monto a pagar segun el medio de pago elegido por el usuario:
 
-let mailUsuario;
+let mail;
 
 switch (pagoEn) {
     
@@ -249,7 +249,7 @@ switch (pagoEn) {
 /* ----------------------------------------------------------------------------------------*/
 
 
-// DESAFIO CLASE 5: NCORPORAR OBJETOS
+// DESAFIO CLASE 5: INCORPORAR OBJETOS
 
 // OBJETO 1: usuarios
 
