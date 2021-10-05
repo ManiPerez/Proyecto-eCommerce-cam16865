@@ -4,7 +4,6 @@
 
 function saludar (nombre) {
     nombre = prompt("Hola, por favor escribe tu nombre:");
-    nombre = nombre.toUpperCase();
     alert(
     `Bienvenid@ ${nombre} a DeLa.Huerta!
     La mejor calidad en frutas y verduras.
@@ -18,10 +17,8 @@ saludar();
 
 function userData (nombre,apellido,mail,telefono,clave) {
     alert("Registrate ingresando tus datos:");
-    nombre = prompt("Nombre:"); 
-    nombre = nombre.toUpperCase();  
+    nombre = prompt("Nombre:");  
     apellido = prompt("Nombre:");
-    apellido = apellido.toUpperCase();
     mail = prompt("Mail:");
     telefono = Number(prompt("Telefono:"));
     clave = prompt("Clave:");
