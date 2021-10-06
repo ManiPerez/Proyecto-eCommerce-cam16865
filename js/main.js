@@ -1,33 +1,6 @@
 // // Desafio Clase 4: Simulador Interactivo
 
 
-
-/* ---------------------------------------------------------------------------------------*/
-// Registro del usuario:
-
-// let nombreCliente;
-// let apellidoCliente;
-// let mailCliente;
-// let telCliente;
-// let claveCliente;
-
-// function registro() {
-//     alert("Registrate ingresando tus datos:");
-//     nombreCliente = prompt("Ingresa tu nombre:");
-//     apellidoCliente = prompt("Ingresa tu apellido:");
-//     mailCliente = prompt("Ingresa tu mail:");
-//     telCliente = prompt("Ingresa tu numero de telefono:");
-//     claveCliente = prompt("Ingresa tu clave:");
-//     return;
-// }
-// registro();
-// let nombre = nombreCliente.toUpperCase();
-// let apellido = apellidoCliente.toUpperCase();
-// let mail = mailCliente.toLowerCase();
-// let tel = Number(telCliente);
-// let clave = claveCliente;
-
-
  // OBJETO 1: Cliente
 
 class Cliente {
@@ -164,9 +137,9 @@ function tarjetaCredito () {
         let cantDeCuotas = Number(prompt(
             `${text}:
             
-            1 - En 1 cuota: $${conteo}. Total: $${conteo}
-            2 - En 2 cuotas de $${(conteo * 1.05)/2} c/u. Total: $${conteo * 1.05}
-            3 - En 3 cuotas de $${(conteo * 1.1)/3} c/u. Total: $${conteo * 1.1}
+            1 - En 1 cuota: $${conteo.toFixed(0)}. Total: $${conteo.toFixed(0)}
+            2 - En 2 cuotas de $${((conteo * 1.05)/2).toFixed(0)} c/u. Total: $${(conteo * 1.05).toFixed(0)}
+            3 - En 3 cuotas de $${((conteo * 1.1)/3).toFixed(0)} c/u. Total: $${(conteo * 1.1).toFixed(0)}
             
             0 - Ninguna. Finalizar transacción
             
@@ -185,7 +158,7 @@ function tarjetaCredito () {
                 break;
         case 1:
             conteo *= 1;
-            alert(`Monto total a pagar en 1 cuota: $${conteo}`);
+            alert(`Monto total a pagar en 1 cuota: $${conteo.toFixed(0)}`);
             alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
@@ -195,7 +168,7 @@ function tarjetaCredito () {
 
         case 2:
             conteo *= 1.05;
-            alert(`Monto total a pagar: $${conteo}. En 2 cuotas de $${conteo/2} c/u.`);
+            alert(`Monto total a pagar: $${conteo.toFixed(0)}. En 2 cuotas de $${(conteo/2).toFixed(0)} c/u.`);
             alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
@@ -205,7 +178,7 @@ function tarjetaCredito () {
 
         case 3:
             conteo *= 1.1;
-            alert(`Monto total a pagar: $${conteo}. En 3 cuotas de $${conteo/3} c/u.`);
+            alert(`Monto total a pagar: $${conteo.toFixed(0)}. En 3 cuotas de $${(conteo/3).toFixed(0)} c/u.`);
             alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`); 
             alert(`
             Gracias por su compra!
@@ -240,6 +213,16 @@ function formasDePago (mensaje = "Elige una forma de pago") {
 }
 let pagoEn = formasDePago();
 
+// FUNCION pedir datos tarjeta:
+
+function datosTarjeta (num,doc,venc,clave) {
+    alert(`El monto total a pagar es: $${conteo.toFixed(0)}. A continuación le pediremos sus datos:`);
+    num = prompt("Ingrese numero de tarjeta:");
+    doc = prompt("Ingrese numero de documento:");
+    venc =prompt("Ingrese fecha de vecimiento de tarjeta:");
+    clave = prompt("Ingrese clave de tarjeta:");
+}
+
 // Sentencia SWITCH para calcular monto a pagar segun el medio de pago elegido por el usuario:
 
 // let mail;
@@ -251,12 +234,8 @@ switch (pagoEn) {
             Lamentamos que no haya concretado su compra.
             Que tenga un buen día!`);
             break;
-    case 1:
-        alert(`El monto total a pagar es: $${conteo}. A continuación le pediremos sus datos:`);
-        prompt("Ingrese numero de tarjeta:");
-        prompt("Ingrese numero de documento:");
-        prompt("Ingrese fecha de vecimiento de tarjeta:");
-        prompt("Ingrese clave de tarjeta:");
+    case 1:  
+        datosTarjeta();
         alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
         alert(`
         Gracias por su compra!
@@ -274,11 +253,7 @@ switch (pagoEn) {
         break;
 
     case 5:
-        alert(`El monto total a pagar es: $${cliente3.mail}. A continuación le pediremos sus datos:`);
-        prompt("Ingrese numero de tarjeta:");
-        prompt("Ingrese numero de documento:");
-        prompt("Ingrese fecha de vecimiento de tarjeta:");
-        prompt("Ingrese clave de tarjeta:");
+        datosTarjeta();
         conteo = tarjetaCredito();
         break;
 
