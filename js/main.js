@@ -1,11 +1,62 @@
 // // Desafio Clase 4: Simulador Interactivo
 
+
+
+/* ---------------------------------------------------------------------------------------*/
+// Registro del usuario:
+
+// let nombreCliente;
+// let apellidoCliente;
+// let mailCliente;
+// let telCliente;
+// let claveCliente;
+
+// function registro() {
+//     alert("Registrate ingresando tus datos:");
+//     nombreCliente = prompt("Ingresa tu nombre:");
+//     apellidoCliente = prompt("Ingresa tu apellido:");
+//     mailCliente = prompt("Ingresa tu mail:");
+//     telCliente = prompt("Ingresa tu numero de telefono:");
+//     claveCliente = prompt("Ingresa tu clave:");
+//     return;
+// }
+// registro();
+// let nombre = nombreCliente.toUpperCase();
+// let apellido = apellidoCliente.toUpperCase();
+// let mail = mailCliente.toLowerCase();
+// let tel = Number(telCliente);
+// let clave = claveCliente;
+
+
+ // OBJETO 1: Cliente
+
+class Cliente {
+    constructor(nombre,apellido,mail,tel,clave) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.tel = tel;
+        this.clave = clave;
+    }
+    clienteInfo() {
+        console.log(`Cliente: ${this.nombre} ${this.apellido}. Mail: ${this.mail}. Telefono: ${this.tel}. Clave de registro: ${this.clave}`);
+    }
+}
+let cliente1 = new Cliente("MABEL","MORALES","mabelmorales@mail.com",221405060,"claveMabel1");
+cliente1.clienteInfo();
+
+let cliente2 = new Cliente("ROBERTO","CASTRO","robertocastro@mail.com",221708090,"claveRoberto2");
+cliente2.clienteInfo();
+
+let cliente3 = new Cliente("COSME","FULANITO","cosmefulanito@mail.com",0303456,"claveCosme3");
+cliente3.clienteInfo();
+
+
 // Funcion SALUDAR al usuario:
 
-function saludar (nombre) {
-    nombre = prompt("Hola, por favor escribe tu nombre:");
+function saludar () {
     alert(
-    `Bienvenid@ ${nombre} a DeLa.Huerta!
+    `Bienvenid@ ${cliente3.nombre} ${cliente3.apellido} a DeLa.Huerta!
     La mejor calidad en frutas y verduras.
     Directo a tu hogar!`);
 }
@@ -13,36 +64,34 @@ saludar();
 
 /* ---------------------------------------------------------------------------------------*/
 
-// Funcion LOG IN del usuario:
+// OBJETO 2: Bolson
 
-function userData (nombre,apellido,mail,telefono,clave) {
-    alert("Registrate ingresando tus datos:");
-    nombre = prompt("Nombre:");  
-    apellido = prompt("Nombre:");
-    mail = prompt("Mail:");
-    telefono = Number(prompt("Telefono:"));
-    clave = prompt("Clave:");
-    console.log(
-        `Datos usuario:
-        Nombre: ${nombre}
-        Apellido: ${apellido}
-        Mail: ${mail}
-        Telefono: ${telefono}
-        Clave: ${clave}
-        `)
-
+class Bolson {
+    constructor(producto,cantidad,precio) {
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.precio = precio;
+    }
+    bolsonInfo() {
+        console.log(`Bolson de ${this.product}. Cantidad: ${this.quantity}. Precio: $${this.price}`);
+    }
 }
-userData();
+let bolson1 = new Bolson("Frutas","1kg","1200");
+bolson1.bolsonInfo();
 
-/* ---------------------------------------------------------------------------------------*/
+let bolson2 = new Bolson("Vegetales","1kg","1000");
+bolson2.bolsonInfo();
+
+let bolson3 = new Bolson("Frutas y Vegetales","2kg","2000");
+bolson3.bolsonInfo();
 
 // FUNCIÓN resumen del pedido:
 
-function sumaCosto(producto,costo,costoTotal) {
+function sumaCosto(product,costo,costoTotal) {
     alert(
         `Mi pedido:
         
-        + ${producto} $${costo} 
+        + ${product} $${costo} 
         
         Total acumulado: $${costoTotal}`);
         return costoTotal;
@@ -54,9 +103,9 @@ function armarLista(texto = "Ingresa el producto que quieras agregar a tu lista"
     let = listaProductos = Number(prompt(
         `${texto}:
         
-        1 - Bolsón de frutas (1kg)                   $1.200
-        2 - Bolsón de verduras (1kg)               $1.000
-        3 - Bolsón de frutas y verduras (2kg)   $2.000
+        1 - Bolsón de ${bolson1.producto} ${bolson1.cantidad} $${bolson1.precio}
+        2 - Bolsón de ${bolson2.producto} ${bolson2.cantidad} $${bolson2.precio}
+        3 - Bolsón de ${bolson3.producto} ${bolson3.cantidad} $${bolson3.precio}
         
         0 - Finalizar lista
         
@@ -66,8 +115,7 @@ function armarLista(texto = "Ingresa el producto que quieras agregar a tu lista"
 let costoProductos = armarLista();
 
 // Sentencia WHILE + SWITCH para agregar productos a la lista y finalizar el proceso mostrando con un alert el Costo Total del pedido:
-
-let producto;
+let product;
 let costo;
 let costoTotal = 0;
 let conteo = 0;
@@ -76,26 +124,26 @@ while(costoProductos != 0) {
 
     switch(costoProductos) {
         case 1:
-            producto = "Bolsón de frutas (1kg)";
-            costo = 1200;
+            product = `Bolsón de ${bolson1.producto} ${bolson1.cantidad}`;
+            costo = Number(bolson1.precio);
             costoTotal += costo;
-            conteo = sumaCosto(producto,costo,costoTotal);
+            conteo = sumaCosto(product,costo,costoTotal);
             costoProductos = armarLista();
             break; 
 
         case 2:
-            producto = "Bolsón de verduras (1kg)";
-            costo = 1000;
+            product = `Bolsón de ${bolson2.producto} ${bolson2.cantidad}`;
+            costo = Number(bolson2.precio);
             costoTotal += costo;
-            conteo = sumaCosto(producto,costo,costoTotal);
+            conteo = sumaCosto(product,costo,costoTotal);
             costoProductos = armarLista();
             break; 
 
         case 3:
-            producto = "Bolsón de frutas y verduras (2kg)";
-            costo = 2000;
+            product = `Bolsón de ${bolson3.producto} ${bolson3.cantidad}`;
+            costo = Number(bolson3.precio);
             costoTotal += costo;
-            conteo = sumaCosto(producto,costo,costoTotal);
+            conteo = sumaCosto(product,costo,costoTotal);
             costoProductos = armarLista();
             break; 
 
@@ -138,7 +186,7 @@ function tarjetaCredito () {
         case 1:
             conteo *= 1;
             alert(`Monto total a pagar en 1 cuota: $${conteo}`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -148,7 +196,7 @@ function tarjetaCredito () {
         case 2:
             conteo *= 1.05;
             alert(`Monto total a pagar: $${conteo}. En 2 cuotas de $${conteo/2} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -158,7 +206,7 @@ function tarjetaCredito () {
         case 3:
             conteo *= 1.1;
             alert(`Monto total a pagar: $${conteo}. En 3 cuotas de $${conteo/3} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`); 
+            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`); 
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -194,7 +242,7 @@ let pagoEn = formasDePago();
 
 // Sentencia SWITCH para calcular monto a pagar segun el medio de pago elegido por el usuario:
 
-let mail;
+// let mail;
 
 switch (pagoEn) {
     
@@ -209,7 +257,7 @@ switch (pagoEn) {
         prompt("Ingrese numero de documento:");
         prompt("Ingrese fecha de vecimiento de tarjeta:");
         prompt("Ingrese clave de tarjeta:");
-        alert(`Su pago se registró con éxito. Le enviamos a ${mail} el comprobante de pago.`);
+        alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
@@ -218,7 +266,7 @@ switch (pagoEn) {
     case 2:
     case 3:
     case 4:
-        alert(`Listo! Le enviamos a ${mail} el link de pago.`);
+        alert(`Listo! Le enviamos a ${cliente3.mail} el link de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
@@ -226,7 +274,7 @@ switch (pagoEn) {
         break;
 
     case 5:
-        alert(`El monto total a pagar es: $${conteo}. A continuación le pediremos sus datos:`);
+        alert(`El monto total a pagar es: $${cliente3.mail}. A continuación le pediremos sus datos:`);
         prompt("Ingrese numero de tarjeta:");
         prompt("Ingrese numero de documento:");
         prompt("Ingrese fecha de vecimiento de tarjeta:");
@@ -239,56 +287,11 @@ switch (pagoEn) {
         break;
 }
 
-// FIN DEL PROGRAMA
 
 
 
-/* ----------------------------------------------------------------------------------------*/
 
 
-// DESAFIO CLASE 5: INCORPORAR OBJETOS
-
-// OBJETO 1: usuarios
-
-class usuario {
-    constructor(nombre,apellido,mail,telefono,clave) {
-        this.name = nombre;
-        this.lastname = apellido;
-        this.mail = mail;
-        this.phonenunber = telefono;
-        this.password = clave;
-    }
-    userData() {
-        console.log("Usuario: " + (this.name) + " " + (this.lastname) + ". Su mail es: " + (this.mail) + ". Telefono: " + (this.phonenunber) + ". Clave de registro: " + (this.password));
-    }
-}
-let usuario1 = new usuario("MABEL","MORALES","mabelmorales@mail.com",221405060,"claveMabel1");
-usuario1.userData();
-
-let usuario2 = new usuario("ROBERTO","CASTRO","robertocastro@mail.com",221708090,"claveRoberto2");
-usuario2.userData();
-
-
-// OBJETO 2: bolsones
-
-class bolson {
-    constructor(productos,cantidad,precio) {
-        this.product = productos;
-        this.quantity = cantidad;
-        this.price = precio;
-    }
-    bolsonData() {
-        console.log("Bolson de " + (this.product) + ". Cantidad: " + (this.quantity) + ". Precio: $" + (this.price));
-    }
-}
-let bolson1 = new bolson("Frutas","1kg","1200");
-bolson1.bolsonData();
-
-let bolson2 = new bolson("Vegetales","1kg","1000");
-bolson2.bolsonData();
-
-let bolson3 = new bolson("Frutas y Vegetales","2kg","2000");
-bolson3.bolsonData();
 
 
 
