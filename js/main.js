@@ -1,39 +1,98 @@
 // // Desafio Clase 4: Simulador Interactivo
 
+// Funcion SALUDAR:
+
+function saludar (nombre) {
+    nombre = prompt("Hola! Por favor ingresa tu nombre:").toUpperCase();
+    alert(`Bienvenid@ ${nombre} a DeLa.Huerta!
+    La mejor calidad en frutas y verduras.
+    Directo a tu hogar!`);
+    return nombre;
+}
+let nombreUsuario = saludar();
 
  // OBJETO 1: Cliente
 
 class Cliente {
-    constructor(nombre,apellido,mail,tel,clave) {
+    constructor(nombre,apellido,mail,domicilio,tel,clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
+        this.domicilio = domicilio;
         this.tel = tel;
         this.clave = clave;
     }
     clienteInfo() {
-        console.log(`Cliente: ${this.nombre} ${this.apellido}. Mail: ${this.mail}. Telefono: ${this.tel}. Clave de registro: ${this.clave}`);
+        console.log(`Cliente: ${this.nombre} ${this.apellido}. Mail: ${this.mail}. Domicilio: ${this.domicilio}. Telefono: ${this.tel}. Clave de registro: ${this.clave}`);
     }
 }
-let cliente1 = new Cliente("MABEL","MORALES","mabelmorales@mail.com",221405060,"claveMabel1");
+
+let cliente1 = new Cliente("COSME","FULANITO","cosmefulanito@mail.com","CALLE 1 N 101","0303456","claveCosme1");
 cliente1.clienteInfo();
 
-let cliente2 = new Cliente("ROBERTO","CASTRO","robertocastro@mail.com",221708090,"claveRoberto2");
-cliente2.clienteInfo();
 
-let cliente3 = new Cliente("COSME","FULANITO","cosmefulanito@mail.com",0303456,"claveCosme3");
-cliente3.clienteInfo();
+// Funcion validarRegistro para iniciar sesion o crear una nueva cuenta
 
+let cliente = {};
 
-// Funcion SALUDAR al usuario:
-
-function saludar () {
-    alert(
-    `Bienvenid@ ${cliente3.nombre} ${cliente3.apellido} a DeLa.Huerta!
+function validarRegistro (registro) {
+    alert(`Bienvenid@ ${nombreUsuario} a DeLa.Huerta!
     La mejor calidad en frutas y verduras.
     Directo a tu hogar!`);
+    registro = Number(prompt(
+        `Ya tenes una cuenta? Deseas crearte una? Ingresa una de las opciones:
+
+        1 - Crear cuenta
+        2 - Iniciar sesión
+
+        0 - Ninguna de las anteriores
+
+        `));
+        return registro;
 }
-saludar();
+let registro = validarRegistro();
+
+
+switch (registro) {
+    case 1:
+        crearCliente();
+        alert("Su cuenta en deLa.Hueta ha sido creada!")          
+        break;
+    case 2:
+        alert("A continuación ingresa los siguientes datos para iniciar sesion:");
+        nombre = prompt("Ingresa tu nombre:").toUpperCase();
+        mail = prompt("Ingresa tu mail:").toLowerCase();
+        clave = prompt("Ingresa tu clave:");
+        incioSesion();
+        break;     
+    default:
+        alert("La opcion que ingresaste no es valida.");
+        break;
+}
+
+// Funcion crear un nuevo Cliente
+
+function crearCliente () {
+    alert("A continuación te pediremos tus datos de registro:");
+    const nombre = prompt("Ingresa tu nombre:").toUpperCase();
+    const apellido = prompt("Ingresa tu apellido:").toUpperCase();
+    const domicilio = prompt("Ingresa el domicilio donde deseas recibir tu pedido:").toUpperCase();
+    const telefono = Number(prompt("Ingresa tu número de telefono:"));
+    const mail = prompt("Ingresa tu mail:").toLowerCase();
+    const clave = prompt("Ingresa tu clave:");
+    cliente[`cliente${nombreUsuario}`] = new Cliente(nombre,apellido,domicilio,telefono,mail,clave);
+    return cliente;              
+}
+
+// Funcion validar datos de inicio de sesion del Cliente:
+
+function incioSesion () {
+    if ((nombre == cliente1.nombre) && (mail == cliente1.mail) && (clave == cliente1.clave)) {
+        alert(`Bienvenido ${cliente1.nombre}!`);;  
+    }else{
+        alert("Datos incorrectos.");
+    } 
+}
 
 /* ---------------------------------------------------------------------------------------*/
 
@@ -159,7 +218,7 @@ function tarjetaCredito () {
         case 1:
             conteo *= 1;
             alert(`Monto total a pagar en 1 cuota: $${conteo.toFixed(0)}`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${this.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -169,7 +228,7 @@ function tarjetaCredito () {
         case 2:
             conteo *= 1.05;
             alert(`Monto total a pagar: $${conteo.toFixed(0)}. En 2 cuotas de $${(conteo/2).toFixed(0)} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
+            alert(`Su pago se registró con éxito. Le enviamos a ${this.mail} el comprobante de pago.`);
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -179,7 +238,7 @@ function tarjetaCredito () {
         case 3:
             conteo *= 1.1;
             alert(`Monto total a pagar: $${conteo.toFixed(0)}. En 3 cuotas de $${(conteo/3).toFixed(0)} c/u.`);
-            alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`); 
+            alert(`Su pago se registró con éxito. Le enviamos a ${this.mail} el comprobante de pago.`); 
             alert(`
             Gracias por su compra!
             Nos comunicaremos cuando su pedido esté en camino.
@@ -236,7 +295,7 @@ switch (pagoEn) {
             break;
     case 1:  
         datosTarjeta();
-        alert(`Su pago se registró con éxito. Le enviamos a ${cliente3.mail} el comprobante de pago.`);
+        alert(`Su pago se registró con éxito. Le enviamos a ${this.mail} el comprobante de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
@@ -245,7 +304,7 @@ switch (pagoEn) {
     case 2:
     case 3:
     case 4:
-        alert(`Listo! Le enviamos a ${cliente3.mail} el link de pago.`);
+        alert(`Listo! Le enviamos a ${this.mail} el link de pago.`);
         alert(`
         Gracias por su compra!
         Nos comunicaremos cuando su pedido esté en camino.
