@@ -280,16 +280,37 @@ const vegetales = [{ id: 1,  producto: "KALE", precio: 72, cantidad: "1kg"},
                   {  id: 8,  producto: "TOMATE"  , precio: 125, cantidad: "1kg"},
                   {  id: 9,  producto: "PAPA" , precio: 55, cantidad: "1kg"}];
 
+// Funcion metodo FIND para encontrar un objeto 
+
 const buscarTomate = vegetales.find(producto => producto.id === 8); 
 console.log(buscarTomate);
 
+// Funcion metodo FILTER para crear nuevo array con los objetos que tienen un precio menor a $50 
+
 const vegBaratos = vegetales.filter(producto => producto.precio < 50); 
 console.log(vegBaratos);
-[{id: 6,producto:"CEBOLLA",precio:22,cantidad:"1kg"},{id:7,producto:"ZANAHORIA",precio: 22,cantidad:"1kg"}]
+
+// Funcion metodo MAP para crear nuevo array con los aumentos en un 5% de los precios de los objetos
 
 const vegAumentos = vegetales.map(producto => producto.precio += 30);
 console.log(vegAumentos);
 
+// Funcion SORT ordenar arreglo de menor a mayor segun el precio de sus objetos
+
+vegetales.sort( (a,b) =>{
+    if ( a.precio < b.precio) {
+        return -1
+    }
+
+    if ( a.precio > b.precio){
+        return 1
+    }
+
+    return 0
+})
+console.log(vegetales);
+
+// Constructor para agregar nuevos objetos al array vegetales con el metodo PUSH 
 
 class Vegetal {
     constructor(nombre,precio,cantidad) {
@@ -318,16 +339,38 @@ const frutas = [{ id: 1,  producto: "MANZANA", precio: 195, cantidad: "1kg"},
                   {  id: 5,  producto: "FRUTILLA", precio: 400, cantidad: "1kg"},
                   {  id: 6,  producto: "BANANA" , precio: 155, cantidad: "1kg"}];
 
-const buscarBanana = vegetales.find(producto => producto.id === 6); 
+
+// Funcion metodo FIND para encontrar un objeto 
+
+const buscarBanana = frutas.find(producto => producto.id === 6); 
 console.log(buscarBanana);
 
-const frutBarata = vegetales.filter(producto => producto.precio < 50); 
-console.log(frutBarata);
-[{id: 6,producto:"NARANJA",precio:42,cantidad:"1kg"},{id:4,producto:"MANDARINA",precio: 44,cantidad:"1kg"}]
+// Funcion metodo FILTER para crear nuevo array con los objetos que tienen un precio menor a $50 
 
-const frutAumento = vegetales.map(producto => producto.precio += 30);
+const frutBarata = frutas.filter(producto => producto.precio < 50); 
+console.log(frutBarata);
+
+// Funcion metodo MAP para crear nuevo array con los aumentos en un 5% de los precios de los objetos
+
+const frutAumento = frutas.map(producto => producto.precio *= 1.05);
 console.log(frutAumento);
 
+// Funcion metodo SORT ordenar arreglo de menor a mayor segun el precio de sus objetos
+
+frutas.sort( (a,b) =>{
+    if ( a.precio < b.precio) {
+        return -1
+    }
+
+    if ( a.precio > b.precio){
+        return 1
+    }
+
+    return 0
+})
+console.log(frutas);
+
+// Constructor para agregar nuevos objetos al array frutas con el metodo PUSH
 
 class Fruta {
     constructor(nombre,precio,cantidad) {
