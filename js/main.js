@@ -1,16 +1,16 @@
 // // Desafio Clase 4: Simulador Interactivo
 
 // Funcion SALUDAR:
-
-function saludar (nombre) {
-    nombre = prompt("Hola! Por favor ingresa tu nombre:").toUpperCase();
-    alert(`Bienvenid@ ${nombre} a DeLa.Huerta!
-    La mejor calidad en frutas y verduras.
-    Directo a tu hogar!`);
-    return nombre;
-}
-let nombreUsuario = saludar();
-
+window.onload = function() {
+    function saludar (nombre) {
+        nombre = prompt("Hola! Por favor ingresa tu nombre:").toUpperCase();
+        alert(`Bienvenid@ ${nombre} a DeLa.Huerta!
+        La mejor calidad en frutas y verduras.
+        Directo a tu hogar!`);
+        return nombre;
+    }
+    let nombreUsuario = saludar();
+};
  // OBJETO 1: Cliente
 
 class Cliente {
@@ -358,14 +358,14 @@ console.log(vegAumentos);
 
 vegetales.sort( (a,b) =>{
     if ( a.precio < b.precio) {
-        return -1
+        return -1;
     }
 
     if ( a.precio > b.precio){
-        return 1
+        return 1;
     }
 
-    return 0
+    return 0;
 })
 console.log(vegetales);
 
@@ -383,9 +383,9 @@ class Vegetal {
     }
 }
 
-vegetales.push(new Vegetal("APIO","1KG","75"));
-vegetales.push(new Vegetal("ZAPALLITO","1KG","140"));
-vegetales.push(new Vegetal("CALABAZA","1KG","90"));
+vegetales.push(new Vegetal("APIO","1KG",75));
+vegetales.push(new Vegetal("ZAPALLITO","1KG",140));
+vegetales.push(new Vegetal("CALABAZA","1KG",90));
 
 
 
@@ -418,14 +418,14 @@ console.log(frutAumento);
 
 frutas.sort( (a,b) =>{
     if ( a.precio < b.precio) {
-        return -1
+        return -1;
     }
 
     if ( a.precio > b.precio){
-        return 1
+        return 1;
     }
 
-    return 0
+    return 0;
 })
 console.log(frutas);
 
@@ -443,9 +443,26 @@ class Fruta {
     }
 }
 
-frutas.push(new Fruta("CIRUELA","1KG","60"));
-frutas.push(new Fruta("KIWI","1KG","175"));
-frutas.push(new Fruta("DURAZNO","1KG","56"));
+frutas.push(new Fruta("CIRUELA","1KG",60));
+frutas.push(new Fruta("KIWI","1KG",175));
+frutas.push(new Fruta("DURAZNO","1KG",56));
+
+
+// DOM
+// Crear elementos HTML en función del listado de nuestros objetos identificados en la clase 6.
+// Establecer un mensaje de bienvenida aleatorio usando un array de mensajes.
+// Capturar una o màs entradas por prompt() y mostrarlas en el HTML, modificando el DOM
+
+for (const producto of productos) {
+    let contenedor = document.createElement("div");
+    //Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.nombre}</p>
+                            <b> $ ${producto.precio}</b>`;
+    document.body.appendChild(contenedor);
+}
+
+
 
 
 
