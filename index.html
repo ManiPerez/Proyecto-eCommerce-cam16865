@@ -7,6 +7,9 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/2e08a2323e.js" crossorigin="anonymous"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <!-- Styles CSS -->
     <link rel="stylesheet" href="./styles/styles.css">
 
@@ -46,170 +49,262 @@
         </section>
     </header>
 
-    <!---------------- Nuestros Productos ---------------->
+    <!-- START SECTION STORE -->
     <section class="products">
         <div class="products__tittle">
             <h3>Nuestros <span>P</span>roductos</h3>
-            <p>De estación, frescos y organicos</p>
+            <p>De estación, frescos y orgánicos</p>
         </div>
         <div class="products__content">
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/paltas.jpg" alt="kale">
+                    <img src="./images/paltas.jpg" alt="palta">
+                    <img class="item-image image-display" src="./images/cart-img-palta.png" alt="palta">
                 </div>
                 <div class="prod-text">
-                    <h3>Palta</h3>
-                    <p>$90 x unidad</p>
+                    <h3 class="item-tittle">Palta x unidad</h3>
+                    <p class="item-price">$90</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
                     <img src="./images/kale.jpg" alt="kale">
+                    <img class="item-image image-display" src="./images/cart-img-kale.png" alt="kale">
                 </div>
                 <div class="prod-text">
-                    <h3>Kale</h3>
-                    <p>$72 x kg</p>
+                    <h3 class="item-tittle">Kale x kg</h3>
+                    <p class="item-price">$72</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/lechuga.jpg" alt="kale">
+                    <img src="./images/lechuga.jpg" alt="lechuga">
+                    <img class="item-image image-display" src="./images/cart-img-lechuga.png" alt="lechuga">
                 </div>
                 <div class="prod-text">
-                    <h3>Lechuga</h3>
-                    <p>$72 x kg</p>
+                    <h3 class="item-tittle">Lechuga x kg</h3>
+                    <p class="item-price">$72</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/brocoli.jpg" alt="kale">
+                    <img src="./images/brocoli.jpg" alt="brocoli">
+                    <img class="item-image image-display" src="./images/cart-img-brocoli.png" alt="brocoli">
                 </div>
                 <div class="prod-text">
-                    <h3>Brócoli</h3>
-                    <p>$80 x kg</p>
+                    <h3 class="item-tittle">Brócoli x kg</h3>
+                    <p class="item-price">$80</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/cebolla.jpg" alt="kale">
+                    <img src="./images/cebolla.jpg" alt="cebolla">
+                    <img class="item-image image-display" src="./images/cart-img-cebolla.png" alt="cebolla">
                 </div>
                 <div class="prod-text">
-                    <h3>Cebolla</h3>
-                    <p>$22 x kg</p>
+                    <h3 class="item-tittle">Cebolla x kg</h3>
+                    <p class="item-price">$22</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/morrones.jpg" alt="kale">
+                    <img src="./images/morrones.jpg" alt="morron">
+                    <img class="item-image image-display" src="./images/cart-img-morron.png" alt="morron">
                 </div>
                 <div class="prod-text">
-                    <h3>Morrón</h3>
-                    <p>$120 x kg</p>
+                    <h3 class="item-tittle">Morrón x kg</h3>
+                    <p class="item-price">$120</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/tomates.jpg" alt="kale">
+                    <img src="./images/tomates.jpg" alt="tomate">
+                    <img class="item-image image-display" src="./images/cart-img-tomate.png" alt="tomate">
                 </div>
                 <div class="prod-text">
-                    <h3>Tomate</h3>
-                    <p>$125 x kg</p>
+                    <h3 class="item-tittle">Tomate x kg</h3>
+                    <p class="item-price">$125</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/zanahorias.jfif" alt="kale">
+                    <img src="./images/zanahorias.jfif" alt="zanahoria">
+                    <img class="item-image image-display" src="./images/cart-img-zanahoria.png" alt="zanahoria">
                 </div>
                 <div class="prod-text">
-                    <h3>Zanahoria</h3>
-                    <p>$22 x kg</p>
+                    <h3 class="item-tittle">Zanahoria x kg</h3>
+                    <p class="item-price">$22</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/papas.jpg" alt="kale">
+                    <img src="./images/papas.jpg" alt="papa">
+                    <img class="item-image image-display" src="./images/cart-img-papa.png" alt="papa">
                 </div>
                 <div class="prod-text">
-                    <h3>Papa</h3>
-                    <p>$55 x kg</p>
+                    <h3 class="item-tittle">Papa x kg</h3>
+                    <p class="item-price">$55</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/huevos.jpg" alt="kale">
+                    <img src="./images/limones.jpg" alt="limon">
+                    <img class="item-image image-display" src="./images/cart-img-limon.png" alt="limon">
                 </div>
                 <div class="prod-text">
-                    <h3>Huevos</h3>
-                    <p>$120 x docena</p>
+                    <h3 class="item-tittle">Limon x kg</h3>
+                    <p class="item-price">$45</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/limones.jpg" alt="kale">
+                    <img src="./images/manzana.jpg" alt="manzana">
+                    <img class="item-image image-display" src="./images/cart-img-manzana.png" alt="manzana">
                 </div>
                 <div class="prod-text">
-                    <h3>Limon</h3>
-                    <p>$45 x kg</p>
+                    <h3 class="item-tittle">Manzana x kg</h3>
+                    <p class="item-price">$195</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/manzana.jpg" alt="kale">
+                    <img src="./images/naranjas.jpg" alt="naranja">
+                    <img class="item-image image-display" src="./images/cart-img-naranja.png" alt="naranja">
                 </div>
                 <div class="prod-text">
-                    <h3>Manzana</h3>
-                    <p>$195 x kg</p>
+                    <h3 class="item-tittle">Naranja x kg</h3>
+                    <p class="item-price">$42</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/naranjas.jpg" alt="kale">
+                    <img src="./images/mandarinas.jpg" alt="mandarina">
+                    <img class="item-image image-display" src="./images/cart-img-mandarina.png" alt="mandarina">
                 </div>
                 <div class="prod-text">
-                    <h3>Naranja</h3>
-                    <p>$42 x kg</p>
+                    <h3 class="item-tittle">Mandarina x kg</h3>
+                    <p class="item-price">$44</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/mandarinas.jpg" alt="kale">
+                    <img src="./images/bananas.jpg" alt="banana">
+                    <img class="item-image image-display" src="./images/cart-img-banana.png" alt="banana">
                 </div>
                 <div class="prod-text">
-                    <h3>Mandarina</h3>
-                    <p>$44 x kg</p>
+                    <h3 class="item-tittle">Banana x kg</h3>
+                    <p class="item-price">$155</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="prod-contentBx">
+            <div class="prod-contentBx item">
                 <div class="prod-ImgBx">
-                    <img src="./images/bananas.jpg" alt="kale">
+                    <img src="./images/frutillas.jpg" alt="frutillas">
+                    <img class="item-image image-display" src="./images/cart-img-frutillas.png" alt="frutillas">
                 </div>
                 <div class="prod-text">
-                    <h3>Banana</h3>
-                    <p>$155 x kg</p>
-                </div>
-            </div>
-            <div class="prod-contentBx">
-                <div class="prod-ImgBx">
-                    <img src="./images/frutillas.jpg" alt="kale">
-                </div>
-                <div class="prod-text">
-                    <h3>Frutilla</h3>
-                    <p>$400 x kg</p>
+                    <h3 class="item-tittle">Frutillas x kg</h3>
+                    <p class="item-price">$450</p>
+                    <button class="item-button addToCart">Agregar al carrito</button>
                 </div>
             </div>
         </div>
     </section>
-    <!------------- Lista de Compra ------------->
-    <section class="car">
-        <div class="car__tittle">
-            <h3>Mi <span>C</span>arrito</h3>
-            <i class="fas fa-shopping-basket"></i>
-            <h6>Crea tu lista de compra:</h6>
-            <p class="userName" id="userName">Nombre usuario</p>
-            <p class="shopList" id="shopList">Listado de productos</p>
-            <button id="boton">Calcular</button>
+    <!-- END SECTION STORE -->
+    <!-- START SECTION SHOPPING CART -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="shopping-cart__tittle text-center"><span>C</span>arrito</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? START SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
+
+            <!-- START TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total </p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">$0</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END TOTAL -->
+
+            <!-- START MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL COMPRA -->
+
+
         </div>
+
     </section>
+    <!-- END SECTION SHOPPING CART -->
 
     <!---------------- Footer ---------------->
     <footer class="footer"> 
@@ -231,9 +326,18 @@
         </div>
     </footer>
 
-    <!---------------- JavaScript Code ---------------->
-    <!-- <script src="./js/main.js"></script> -->
-    <script src="./js/code.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/tienda.js"></script>
 
 </body>
 </html>
